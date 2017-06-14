@@ -1,0 +1,75 @@
+{
+  "name": "Minecraft",
+  "source": {
+    "origin": "eclipse/ubuntu_jdk8",
+    "type": "image"
+  },
+  "components": [
+    {
+      "version": "1.8.0_45",
+      "name": "JDK"
+    },
+    {
+      "version": "3.2.2",
+      "name": "Maven"
+    },
+    {
+      "version": "1.11",
+      "name": "Sponge vanilla"
+    }
+  ],
+  "tags": [
+    "Java",
+    "JDK",
+    "Maven",
+    "Subversion",
+    "Ubuntu",
+    "Git",
+    "Minecraft"
+  ],
+  "id": "stackoynm7lrc0605ckt1",
+  "workspaceConfig": {
+    "defaultEnv": "default",
+    "environments": {
+      "default": {
+        "machines": {
+          "dev-machine": {
+            "attributes": {
+              "memoryLimitBytes": "2147483648"
+            },
+            "servers": {},
+            "agents": [
+              "org.eclipse.che.terminal",
+              "org.eclipse.che.ws-agent",
+              "org.eclipse.che.ssh"
+            ]
+          }
+        },
+        "recipe": {
+          "location": "edewit/minecraft-che",
+          "type": "dockerimage"
+        }
+      }
+    },
+    "projects": [],
+    "name": "default",
+    "commands": [
+      {
+        "commandLine": "mvn clean install -f ${current.project.path}",
+        "name": "build",
+        "attributes": {},
+        "type": "mvn"
+      },
+      {
+        "commandLine": "cp ${current.project.path}/target/*.jar /home/user/minecraft/mods/ && java -jar /home/user/minecraft/sponge.jar",
+        "name": "run",
+        "type": "custom",
+        "attributes": {}
+      }
+    ],
+    "links": []
+  },
+  "description": "Default Java Stack with JDK 8, Maven and Minecraft.",
+  "creator": "che",
+  "scope": "general"
+}
