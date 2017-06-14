@@ -69,7 +69,7 @@
       {
         "commandLine": "mkdir -p ${current.project.path}/minecraft/mods && cd ${current.project.path}/minecraft && cp ../target/*.jar mods/ && java -jar /home/user/minecraft/sponge.jar",
         "name": "run local",
-        "typ": "custom",
+        "type": "custom",
         "attributes": {}
       }
     ],
