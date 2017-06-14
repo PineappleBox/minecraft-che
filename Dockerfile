@@ -13,8 +13,8 @@ ENV PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
 ENV SPONGE_VERSION 1.11.2-6.1.0-BETA-6
 ENV SPONGE_URL https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/${SPONGE_VERSION}/spongevanilla-${SPONGE_VERSION}.jar
 
-RUN mkdir ${MC_HOME} ${M2_HOME} && \
+RUN mkdir -p ${MC_HOME}/mods ${M2_HOME} && \
     wget -qO- "http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C ${M2_HOME} && \
     wget -q -O "${MC_HOME}/sponge.jar" ${SPONGE_URL} && \
-    echo "eula=true" > "${MC_HOME}/eula.txt" \
+    echo "eula=true" > "${MC_HOME}/eula.txt" && \
     echo "export MAVEN_OPTS=\$JAVA_OPTS" >> /home/user/.bashrc

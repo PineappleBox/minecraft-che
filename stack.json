@@ -61,15 +61,21 @@
         "type": "mvn"
       },
       {
-        "commandLine": "cp ${current.project.path}/target/*.jar /home/user/minecraft/mods/ && java -jar /home/user/minecraft/sponge.jar",
-        "name": "run",
+        "commandLine": "cp ${current.project.path}/target/*.jar /home/user/minecraft/mods/ && cd /home/user/minecraft && java -jar sponge.jar",
+        "name": "run server",
         "type": "custom",
+        "attributes": {}
+      },
+      {
+        "commandLine": "mkdir -p ${current.project.path}/minecraft/mods && cd ${current.project.path}/minecraft && cp ../target/*.jar mods/ && java -jar /home/user/minecraft/sponge.jar",
+        "name": "run local",
+        "typ": "custom",
         "attributes": {}
       }
     ],
     "links": []
   },
   "description": "Default Java Stack with JDK 8, Maven and Minecraft.",
-  "creator": "che",
+  "creator": "edewit",
   "scope": "general"
 }
