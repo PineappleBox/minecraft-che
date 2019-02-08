@@ -46,7 +46,7 @@
           }
         },
         "recipe": {
-          "location": "PineappleBox/minecraft-che",
+          "location": "pineapplebox/minecraft-che",
           "type": "dockerimage"
         }
       }
