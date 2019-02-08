@@ -14,8 +14,8 @@
       "name": "Maven"
     },
     {
-      "version": "1.11",
-      "name": "Sponge vanilla"
+      "version": "1.2.6",
+      "name": "Minecraft Vanilla"
     }
   ],
   "tags": [
@@ -46,7 +46,7 @@
           }
         },
         "recipe": {
-          "location": "edewit/minecraft-che",
+          "location": "PineappleBox/minecraft-che",
           "type": "dockerimage"
         }
       }
@@ -76,6 +76,6 @@
     "links": []
   },
   "description": "Default Java Stack with JDK 8, Maven and Minecraft.",
-  "creator": "edewit",
+  "creator": "edewit (hardly modofied by PineappleBox)",
   "scope": "general"
 }
