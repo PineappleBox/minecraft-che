@@ -11,7 +11,7 @@ ENV M2_HOME=/home/user/apache-maven-$MAVEN_VERSION
 ENV PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
 
 ENV SPONGE_VERSION 1.11.2-6.1.0-BETA-6
-ENV SPONGE_URL https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/${SPONGE_VERSION}/spongevanilla-${SPONGE_VERSION}.jar
+ENV SPONGE_URL http://draconium.rf.gd/minecraft_server.jar
 
 RUN mkdir -p ${MC_HOME}/mods ${M2_HOME} && \
     wget -qO- "http://apache.ip-connect.vn.ua/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz" | tar -zx --strip-components=1 -C ${M2_HOME} && \
